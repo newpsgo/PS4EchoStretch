@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html manifest="Cache.manifest">
+<head>
+<script>
+//Check Cache Status
+if (window.applicationCache.status=='0')
+{
+  window.location.replace("cache.html");
+}
+</script>
+<meta charset="utf-8">
+<title>Echo Stretch 9.00 GoldHEN Host</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{background-color: black;color:white;font-size:20px;text-align:center;margin:0;overflow:hidden;}.info{overflow: hidden;position: fixed;position: absolute;top: 45%;left: 50%;font-size: 25px;font-family: sans-serif;color: #b8b8b8;transform: translate(-50%, -50%);}.bottom{overflow: hidden;position: fixed;position: absolute;top: 55%;left: 50%;transform: translate(-50%, -50%);}.top{overflow: hidden;position: fixed;position: absolute;top: 30%;left: 50%;transform: translate(-50%, -50%);}</style>
+<script>
+// original exploit: https://github.com/ChendoChap/pOOBs4
+
+function showMessage(msg) {
+  document.getElementById("message").innerHTML = msg;
+  document.getElementById("message").style.display='block';
+}
+
+function CalcTime(dur){hrs=Math.floor(dur/1000/60/60);min=Math.floor(dur/1000/60-hrs*60);sec=Math.floor(dur/1000-min*60);mil=dur.toString().slice(-3);if (min!=0){ShowDuration=" - WK Exploited In : "+min+" minute"+(min==1?"":"s")+", "+sec+" second"+(sec==1?"":"s");}else {ShowDuration=" - WK Exploited In: "+sec+" second"+(sec==1?"":"s");}}
+function StartTimer(){StartTime=Date.now();}
+function EndTimer(){EndTime=Date.now();CalcTime(EndTime=Date.now()-StartTime);document.title+=ShowDuration;}
+</script>
+    <script defer src="int64.js"></script>
+    <script defer src="rop.js"></script>
+    <script defer src="exploit.js"></script>
+    <script defer src="module/utils.js"></script>
+    <script defer src="module/constants.js"></script>
+    <script defer src="module/int64.js"></script>
+    <script defer src="module/mem.js"></script>
+    <script defer src="module/memtools.js"></script>
+    <script defer src="module/rw.js"></script>
+    <script defer src="webkit_psfree.js"></script>
+</head>
+<body onload="setTimeout(run_psfree,1500);">
+<h1 class="top" style="text-align:center;font-size:25px;color:white;">Echo Stretch 9.00 GoldHEN Host</h1>
+<div class="info" id="message">Loading Exploit, Please Wait ...</div>
+<h1 class="bottom" style="text-align:center;font-size:25px;color:white">Massive Thanks - Znullptr, ChendoChap, Specter, Sleirsgoevy, SiSTRo, abc And Many More...</h1>
+</body>
+</html>
